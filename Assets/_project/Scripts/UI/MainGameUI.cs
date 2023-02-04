@@ -39,4 +39,9 @@ public class MainGameUI : MonoBehaviour
     {
         currentMDug.SetAmount(metersDug);
     }
+
+    public void UpdateHighscoreMetersDugText(int metersDug)
+    {
+        highscoreMDug.SetAmount(metersDug);
+    }
 }

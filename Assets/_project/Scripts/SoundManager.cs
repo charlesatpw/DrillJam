@@ -111,5 +111,6 @@ public class SoundManager : MonoBehaviour
     {
         sfxSource.Stop();
         musicSource.Stop();
+        voiceLineSource.Stop();
     }
 }
