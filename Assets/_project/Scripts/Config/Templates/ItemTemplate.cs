@@ -6,6 +6,7 @@ public class ItemTemplate
 {
     public string id { get; set; }
     public float weight { get; set; }
+    public int minSpawnDepth { get; set; }
 
     public ItemTemplate() { }
 }
