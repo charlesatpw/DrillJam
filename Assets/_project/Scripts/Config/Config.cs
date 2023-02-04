@@ -19,4 +19,9 @@ public class Config
 
         return true;
     }
+
+    public static bool FilesRead()
+    {
+        return playerConfig != null && enemyConfig != null && itemConfig != null;
+    }
 }

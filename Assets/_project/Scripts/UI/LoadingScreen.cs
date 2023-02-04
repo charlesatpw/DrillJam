@@ -24,6 +24,9 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField]
     List<ParticleSystem> digParticleEffects = new List<ParticleSystem>();
 
+    [SerializeField]
+    private Context context;
+
     private void Awake()
     {
         if (LoadingBuffer.instance == null)
@@ -46,6 +49,8 @@ public class LoadingScreen : MonoBehaviour
 
     async UniTask LoadSceneAsync()
     {
+        await UniTask.WaitUntil(() => context.initialised);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LoadingBuffer.instance.sceneToLoad);
         await UniTask.WaitUntil(() => asyncLoad.isDone);
     }

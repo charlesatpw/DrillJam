@@ -5,11 +5,16 @@ using UnityEngine.UIElements;
 
 public class Context : MonoBehaviour
 {
+    public bool initialised = false;
+
     private void Awake()
     {
-        Config.ReadConfigFiles();
-        Debug.Log(Config.playerConfig.turnSpeed);
+        if (Config.FilesRead())
+        {
+            return;
+        }
 
+        Config.ReadConfigFiles();
         LocalPlayerData.instance = new LocalPlayerData();
 
         if (LocalPlayerData.instance.localData == null)
@@ -17,10 +22,7 @@ public class Context : MonoBehaviour
             LocalPlayerData.instance.localData = new PlayerData();
             LocalPlayerData.SaveData(LocalPlayerData.instance.localData);
         }
-    }
 
-    private void Start()
-    {
-        
+        initialised = true;
     }
 }
