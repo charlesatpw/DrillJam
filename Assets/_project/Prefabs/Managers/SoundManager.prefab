@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0221eea71b46ff640bb0830188f54293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: 0
   sfxSource: {fileID: 3726379467333778765}
   musicSource: {fileID: 3726379467333778764}
   voiceLineSource: {fileID: 3726379467333778763}
-  soundClips: []
+  soundClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 05d8c169bfe94224dbfe5155fb5c4dfe, type: 3}
 --- !u!82 &3726379467333778765
 AudioSource:
   m_ObjectHideFlags: 0

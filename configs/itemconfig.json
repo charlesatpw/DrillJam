@@ -2,12 +2,17 @@
   "items" : {
     "Jerry_Can" : {
         "id" : "Jerry_Can",
-        "weight" : 0.5,
+        "weight" : 0.33,
         "minSpawnDepth" : 50
     },
     "Water_Pocket" : {
         "id" : "Water_Pocket",
-        "weight" : 0.5,
+        "weight" : 0.334,
+        "minSpawnDepth" : 100
+    },
+    "Fertilizer" : {
+        "id" : "Fertilizer",
+        "weight" : 0.33,
         "minSpawnDepth" : 100
     }
   }
