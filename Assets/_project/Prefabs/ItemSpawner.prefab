@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   water: {fileID: 919132149155446097, guid: dd022054caf24c640ba1950487338984, type: 3}
-  fert: {fileID: 919132149155446097, guid: b0dc200e5a8472c4fba8e5ab2b811556, type: 3}
+  fert: {fileID: 0}
   fuel: {fileID: 919132149155446097, guid: 93336e2dd7ccbff4aaf13094466d84c8, type: 3}
   minY: 0
   maxYAddition: 50
