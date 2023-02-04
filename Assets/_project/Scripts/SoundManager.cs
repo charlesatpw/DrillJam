@@ -7,6 +7,12 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
+#if UNITY_EDITOR
+    [SerializeField]
+    [Tooltip("For Visual Purposes in editor only")]
+    private SoundClip clip;
+#endif
+
     public enum SoundClip
     {
         None,
