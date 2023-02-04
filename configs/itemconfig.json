@@ -1,4 +1,7 @@
 {
+  "maxTriesPerSpawn" : 15,
+  "numOfItemsPerSection" : 10,
+  "itemSectionCount" : 20,
   "items" : {
     "Jerry_Can" : {
         "weight" : 0.33,
