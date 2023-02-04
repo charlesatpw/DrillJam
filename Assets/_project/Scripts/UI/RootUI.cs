@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class RootUI : MonoBehaviour
 {
-    public MainGameUI mainGame;
+    [SerializeField]
+    private MainGameUI mainGame;
+
+    public MainGameUI GetMainGameUI() 
+    { 
+        return mainGame; 
+    }
 }

@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 1141674766030193428}
   - component: {fileID: 6041704219034117398}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: FuelSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,8 +198,8 @@ RectTransform:
   m_Father: {fileID: 7343487615814114193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 7343487615814114193}
   - component: {fileID: 1425523871657787656}
   m_Layer: 0
-  m_Name: StatSlider (1)
+  m_Name: FuelStatSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,11 +363,11 @@ RectTransform:
   m_Father: {fileID: 6971516205628367204}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1425523871657787656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 6971516204107337431}
   - component: {fileID: 8514298089380069460}
   m_Layer: 0
-  m_Name: StatSlider
+  m_Name: HealthStatSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,6 +649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ce50cfba66bf34fab956003c8224da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelSliderDisplay: {fileID: 1425523871657787656}
+  healthSliderDisplay: {fileID: 8514298089380069460}
+  currentMDug: {fileID: 697792229293961345}
+  highscoreMDug: {fileID: 4848341894863334620}
 --- !u!1 &6971516204576787049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1075,7 @@ GameObject:
   - component: {fileID: 6971516205776444013}
   - component: {fileID: 6971516205776444012}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
