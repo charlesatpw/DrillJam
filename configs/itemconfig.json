@@ -5,15 +5,21 @@
   "items" : {
     "Jerry_Can" : {
         "weight" : 0.33,
-        "minSpawnDepth" : 50
+        "minSpawnDepth" : 50,
+        "statEffect" : 20,
+        "damaging" : false
     },
     "Water_Pocket" : {
         "weight" : 0.334,
-        "minSpawnDepth" : 100
+        "minSpawnDepth" : 100,
+        "statEffect" : 20,
+        "damaging" : false
     },
     "Fertilizer" : {
         "weight" : 0.33,
-        "minSpawnDepth" : 100
+        "minSpawnDepth" : 100,
+        "statEffect" : 20,
+        "damaging" : false
     }
   }
 }
