@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1950543526}
   water: {fileID: 919132149155446097, guid: dd022054caf24c640ba1950487338984, type: 3}
-  fert: {fileID: 919132149155446097, guid: b0dc200e5a8472c4fba8e5ab2b811556, type: 3}
+  fert: {fileID: 558032813061359902, guid: 4cb30752d975bfe45b95a83df37ff414, type: 3}
   fuel: {fileID: 919132149155446097, guid: 93336e2dd7ccbff4aaf13094466d84c8, type: 3}
   minY: 0
   maxYAddition: 50
@@ -371,8 +371,9 @@ GameObject:
   - component: {fileID: 814081196}
   - component: {fileID: 814081195}
   - component: {fileID: 814081198}
+  - component: {fileID: 814081199}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: GameCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814081194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -137.62001, z: -38.3}
+  m_LocalPosition: {x: 0, y: -137.62001, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -483,6 +484,20 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2137993404}
+--- !u!114 &814081199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814081194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3292b7e70dd310a49a0d6462fff123b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ZPosition: -35
+  m_XPosition: 0
 --- !u!1 &946817049
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a841f7c6fe8f44a43a907f768cdde096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialised: 0
 --- !u!4 &1332607963
 Transform:
   m_ObjectHideFlags: 0
@@ -1048,7 +1064,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: 22cbd71664a19ba46b1013cac749fe04, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1063,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934694092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -137.62001, z: -38.3}
+  m_LocalPosition: {x: 0, y: -137.62001, z: -35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
