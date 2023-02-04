@@ -14,8 +14,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Transform topOfMapObject;
 
+    [SerializeField]
+    public BoxCollider2D levelBoundingBox;
+
     public void Update()
     {
+        if (transform.position.x < levelBoundingBox.bounds.min.x)
+        {
+            leftRightAxis = 1;
+        }
+        else if (transform.position.x > levelBoundingBox.bounds.max.x)
+        {
+            leftRightAxis = -1;
+        }
+
         float rotationChange = leftRightAxis * Time.deltaTime * Config.playerConfig.turnSpeed;
         if (currentRotation + rotationChange > Config.playerConfig.maxRotationAngle)
         {

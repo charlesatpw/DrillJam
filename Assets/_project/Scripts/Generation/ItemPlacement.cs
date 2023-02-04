@@ -17,7 +17,7 @@ public class ItemPlacement : MonoBehaviour
     public GameObject fuel;
 
     [SerializeField]
-    public BoxCollider2D boxCollider2D;
+    public BoxCollider2D levelBoundingBox;
 
     public float minY;
     public float maxYAddition;
@@ -30,6 +30,14 @@ public class ItemPlacement : MonoBehaviour
     public int maxTriesPerSpawn;
 
     public int numberOfItem;
+
+    private float totalWeighting;
+
+    private void Start()
+    {
+        minX = levelBoundingBox.bounds.min.x + 3f;
+        maxX = levelBoundingBox.bounds.max.x - 3f;
+    }
 
     private void Update()
     {
@@ -89,6 +97,8 @@ public class ItemPlacement : MonoBehaviour
 
     private GameObject SelectItem()
     {
+        flo
+
         float randomValue = Random.Range(0f, 100f);
         if (randomValue < 33.3f)
         {
