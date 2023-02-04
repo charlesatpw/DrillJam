@@ -4,31 +4,36 @@
             "weight" : 0.25,
             "speed" : 10,
             "damage" :  10,
-            "health" :  40
+            "health" :  40,
+            "minSpawnDepth" : 100
         },
         "Ant_Soldier" : {
             "weight" : 0.25,
             "speed" : 10,
             "damage" :  20,
-            "health" :  75
+            "health" :  75,
+            "minSpawnDepth" : 150
         },
         "Mole_Suit" : {
             "weight" : 0.25,
             "speed" : 10,
             "damage" :  60,
-            "health" :  100
+            "health" :  100,
+            "minSpawnDepth" : 700
         },
         "Mole_Tie" : {
             "weight" : 0.25,
             "speed" : 10,
             "damage" :  40,
-            "health" :  55
+            "health" :  55,
+            "minSpawnDepth" : 250
         },
         "Worm" : {
             "weight" : 0.25,
             "speed" : 15,
             "damage" :  20,
-            "health" :  25
+            "health" :  25,
+            "minSpawnDepth" : 300
         }
     },
     "enemyweapons" :

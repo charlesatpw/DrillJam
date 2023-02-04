@@ -8,6 +8,7 @@ public class EnemyTemplate
     public float speed { get; set; }
     public int damage { get; set; }
     public int health { get; set; }
+    public int minSpawnDepth { get; set; }
 
     public EnemyTemplate()
     {
