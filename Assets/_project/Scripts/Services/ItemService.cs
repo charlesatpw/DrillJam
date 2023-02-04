@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ItemService
 {
-    static float GetTotalItemWeight()
+    public static float GetTotalItemWeight()
     {
-        return 1f;
+        float total = 0f;
+        foreach(ItemTemplate item in Config.itemConfig.items.Values)
+        {
+            total += item.weight;
+        }
+        return total;
     }
 }

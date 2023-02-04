@@ -18,7 +18,7 @@ public class StatTrigger : AbstractTriggerable
 
     public void OnPlayerHit()
     {
-        PlayerService.IncreaseStat(statToModifiy, 1);
+        PlayerService.IncreaseStat(statToModifiy, );
         Destroy(gameObject);
     }
 }

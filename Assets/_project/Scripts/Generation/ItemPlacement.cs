@@ -97,18 +97,22 @@ public class ItemPlacement : MonoBehaviour
 
     private GameObject SelectItem()
     {
-        float randomValue = Random.Range(0f, 100f);
-        if (randomValue < 33.3f)
+        List<ItemTemplate> items = new List<ItemTemplate>(Config.itemConfig.items.Values);
+        float totalWeight = ItemService.GetTotalItemWeight();
+
+        float randomValue = Random.Range(0f, totalWeight);
+
+        if (randomValue < Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
-            return water;
+            return fert;
         }
-        else if (randomValue < 66.6f)
+        else if (randomValue < Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
             return fuel;
         }
         else
         {
-            return fert;
+            return water;
         }
     }
 }
