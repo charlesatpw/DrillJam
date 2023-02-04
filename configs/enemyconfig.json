@@ -1,14 +1,45 @@
 {
     "enemies" : {
-        "Ant" : {
-            "id" : "Ant",
-            "weight" : 0.5,
-            "speed" : 10
+        "Ant_Worker" : {
+            "weight" : 0.25,
+            "speed" : 10,
+            "damage" :  10,
+            "health" :  40
         },
-        "Mole" : {
-            "id" : "Mole",
-            "weight" : 0.5,
-            "speed" : 10
+        "Ant_Soldier" : {
+            "weight" : 0.25,
+            "speed" : 10,
+            "damage" :  20,
+            "health" :  75
+        },
+        "Mole_Suit" : {
+            "weight" : 0.25,
+            "speed" : 10,
+            "damage" :  60,
+            "health" :  100
+        },
+        "Mole_Tie" : {
+            "weight" : 0.25,
+            "speed" : 10,
+            "damage" :  40,
+            "health" :  55
+        },
+        "Worm" : {
+            "weight" : 0.25,
+            "speed" : 15,
+            "damage" :  20,
+            "health" :  25
+        }
+    },
+    "enemyweapons" :
+    {
+        "Ant_Soldier" : 
+        {
+            "fireRatePerSecond" : 1
+        },
+        "Mole_Suit" : 
+        {
+            "fireRatePerSecond" : 2
         }
     }
 }

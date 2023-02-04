@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyTemplate
 {
-    public string id { get; set; }
     public float weight { get; set; }
     public float speed { get; set; }
+    public int damage { get; set; }
+    public int health { get; set; }
 
     public EnemyTemplate()
     {
-
+        
     }
 }
