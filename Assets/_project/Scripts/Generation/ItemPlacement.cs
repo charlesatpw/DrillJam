@@ -97,8 +97,6 @@ public class ItemPlacement : MonoBehaviour
 
     private GameObject SelectItem()
     {
-        flo
-
         float randomValue = Random.Range(0f, 100f);
         if (randomValue < 33.3f)
         {

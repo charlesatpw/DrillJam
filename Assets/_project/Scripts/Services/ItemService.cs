@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class ItemService
 {
-
+    static float GetTotalItemWeight()
+    {
+        return 1f;
+    }
 }
