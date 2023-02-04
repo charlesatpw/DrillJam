@@ -1,3 +1,5 @@
 {
-    "turnSpeed" : 5.1
+  "turnSpeed": 100.1,
+  "forwardSpeed": 12,
+  "maxRotationAngle": 60
 }
