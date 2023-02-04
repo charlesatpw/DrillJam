@@ -46,5 +46,29 @@
         {
             "fireRatePerSecond" : 2
         }
+    },
+    "enemyGroups" : 
+    {
+        "Ants" : 
+        {
+            "enemiesInGroup" : [
+                "Ant_Soldier", "Ant_Worker"
+            ],
+            "weight" : 0.4
+        },
+        "Moles" : 
+        {
+            "enemiesInGroup" : [
+                "Mole_Suit", "Mole_Tie"
+            ],
+            "weight" : 0.4
+        },
+        "Worm" : 
+        {
+            "enemiesInGroup" : [
+                "Worm"
+            ],
+            "weight" : 0.2
+        }
     }
 }
