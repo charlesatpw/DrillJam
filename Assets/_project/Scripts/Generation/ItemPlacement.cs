@@ -52,7 +52,7 @@ public class ItemPlacement : MonoBehaviour
         // Pick time
         GameObject itemToSpawn = SelectItem();
         // Pick location
-        Instantiate(itemToSpawn, location, new Quaternion(0, 0, 0, 0));
+        Instantiate(itemToSpawn, location, new Quaternion(0, 0, 0, 0), transform);
     }
 
     private Vector3 SelectLocation(List<Vector3> spawnLocations, float minDistanceRadius, int maxTries, int currentTry)

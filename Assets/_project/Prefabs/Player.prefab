@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1950543533}
   - component: {fileID: 1950543534}
   - component: {fileID: 1950543535}
+  - component: {fileID: 7219042421473403785}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -173,7 +174,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6be9de857137b15419dca0cf09f3a923, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,7 +198,7 @@ TrailRenderer:
   m_Time: 2000
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -224,8 +225,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.23584908, g: 0.1418349, b: 0.070087224, a: 1}
-      key1: {r: 0.2924528, g: 0.1391735, b: 0.07035421, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -309,6 +310,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de786ecc4eda9045b6ed63528c17079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7219042421473403785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984724822603928843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18adb1cf80cd2a84ca4a9c508239eb1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trailRender: {fileID: 2984724822603928835}
+  currentPositon: 0
+  length: 0
 --- !u!1 &2984724823459381167
 GameObject:
   m_ObjectHideFlags: 0
