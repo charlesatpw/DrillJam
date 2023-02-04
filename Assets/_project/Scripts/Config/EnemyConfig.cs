@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyConfig
 {
+    public Dictionary<string, EnemyTemplate> enemies = new Dictionary<string, EnemyTemplate>();
 
     public EnemyConfig()
     {

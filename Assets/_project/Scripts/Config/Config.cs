@@ -4,6 +4,7 @@ public class Config
 
     public static PlayerConfig playerConfig;
     public static EnemyConfig enemyConfig;
+    public static ItemConfig itemConfig;
 
     public static bool ReadConfigFiles()
     { 
@@ -12,6 +13,9 @@ public class Config
 
         enemyConfig = new EnemyConfig();
         enemyConfig = JsonParser.ReadFile<EnemyConfig>(enemyConfig.GetType().ToString()) as EnemyConfig;
+
+        itemConfig = new ItemConfig();
+        itemConfig = JsonParser.ReadFile<ItemConfig>(playerConfig.GetType().ToString()) as ItemConfig;
 
         return true;
     }
