@@ -9,9 +9,6 @@ public class PlayPage : MainPage
     [SerializeField]
     Button playGameButton;
 
-    [SerializeField]
-    Scene loadingScene;
-
     public override void Init(MainMenuUI mainMenu)
     {
         base.Init(mainMenu);
@@ -22,6 +19,8 @@ public class PlayPage : MainPage
 
     private void PlayGame()
     {
-        SceneManager.LoadScene(loadingScene.name);    
+        LoadingBuffer.instance = new LoadingBuffer();
+        LoadingBuffer.instance.sceneToLoad = GameConstants.GameScene;
+        SceneManager.LoadScene(GameConstants.LoadingScene);    
     }
 }

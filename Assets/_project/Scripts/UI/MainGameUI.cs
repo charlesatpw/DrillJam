@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class MainGameUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    SliderStatDisplay fuelSliderDisplay;
+    [SerializeField]
+    SliderStatDisplay healthSliderDisplay;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    StatDisplay currentMDug;
+    [SerializeField]
+    StatDisplay highscoreMDug;
+
+    private void Start()
     {
-        
+        highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
+
+        //int playerMaxFuel = Config.playerConfig.;
+        //fuelSliderDisplay.Init();
     }
 }
