@@ -1,6 +1,6 @@
 {
   "turnSpeed": 100.1,
-  "forwardSpeed": 12,
+  "forwardSpeed": 10,
   "maxRotationAngle": 60,
   "maxFuel" : 100,
   "maxHealth" : 100
