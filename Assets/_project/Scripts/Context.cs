@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Context : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        Config.ReadConfigFiles();
+        Debug.Log(Config.playerConfig.turnSpeed);
+
+        LocalPlayerData.instance = new LocalPlayerData();
+
+        if (LocalPlayerData.instance.localData == null)
+        {
+            LocalPlayerData.instance.localData = new PlayerData();
+            LocalPlayerData.SaveData(LocalPlayerData.instance.localData);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         
     }
