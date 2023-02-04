@@ -15,7 +15,7 @@ public class Config
         enemyConfig = JsonParser.ReadFile<EnemyConfig>(enemyConfig.GetType().ToString()) as EnemyConfig;
 
         itemConfig = new ItemConfig();
-        itemConfig = JsonParser.ReadFile<ItemConfig>(playerConfig.GetType().ToString()) as ItemConfig;
+        itemConfig = JsonParser.ReadFile<ItemConfig>(itemConfig.GetType().ToString()) as ItemConfig;
 
         return true;
     }
