@@ -9,7 +9,7 @@ public class PlayerService
 
     public static bool HasPlayerBrokenRecord()
     {
-        return LocalPlayerData.instance.localData.currentMScore > LocalPlayerData.instance.localData.highestMScore 
+        return (LocalPlayerData.instance.localData.currentMScore > LocalPlayerData.instance.localData.highestMScore) 
             || (LocalPlayerData.instance.localData.highestMScore == 0 && LocalPlayerData.instance.localData.currentMScore > 0);
     }
 
@@ -64,5 +64,10 @@ public class PlayerService
             default: 
                 return false;
         }
+    }
+
+    public static bool isPlayerDead()
+    {
+        return (LocalPlayerData.instance.localData.health <= 0 || LocalPlayerData.instance.localData.fuel <= 0);
     }
 }
