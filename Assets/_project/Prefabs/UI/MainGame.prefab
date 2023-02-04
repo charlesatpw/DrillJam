@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971516204107337431}
+  - component: {fileID: 8514298089380069460}
   m_Layer: 0
   m_Name: StatSlider
   m_TagString: Untagged
@@ -37,6 +38,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &8514298089380069460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971516204107337428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b830e690f245884684996c838c5127e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountText: {fileID: 0}
+  statSlider: {fileID: 0}
 --- !u!1 &6971516204124837413
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +227,7 @@ GameObject:
   - component: {fileID: 6971516205092974711}
   - component: {fileID: 6971516205092974708}
   - component: {fileID: 6971516205092974710}
+  - component: {fileID: 697792229293961345}
   m_Layer: 0
   m_Name: MeterCount
   m_TagString: Untagged
@@ -350,6 +366,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &697792229293961345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971516205092974714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081adff9885a27346ac07e157aa85374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountText: {fileID: 6971516205092974708}
 --- !u!1 &6971516205451327547
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6971516205628367204}
   - component: {fileID: 6971516205628367207}
+  - component: {fileID: 3149872578440839016}
   m_Layer: 0
   m_Name: TopBar
   m_TagString: Untagged
@@ -438,6 +468,26 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!95 &3149872578440839016
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971516205628367205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03c978e9e2a5fc84891951ceda38071a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6971516205652767034
 GameObject:
   m_ObjectHideFlags: 0
