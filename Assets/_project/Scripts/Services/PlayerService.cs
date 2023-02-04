@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerService
 {
+    public static PlayerService instance;
+    public bool highestMeterRecordBroken = false;
+
+    public static bool HasPlayerBrokenRecord()
+    {
+        return LocalPlayerData.instance.localData.currentMScore > LocalPlayerData.instance.localData.highestMScore;
+    }
+
+
     public static void IncreaseStat(PlayerStats statToIncrease, int amount, bool save = false)
     {
         if (!RootUI.instance || LocalPlayerData.instance == null)

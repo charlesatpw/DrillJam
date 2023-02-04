@@ -28,11 +28,22 @@ public class PlayerMovement : MonoBehaviour
         {
             currentRotation += rotationChange;
         }
+
         transform.Rotate(0, 0, rotationChange);
-
-        Debug.Log(currentRotation);
-
         transform.position += transform.up * -1f * Time.deltaTime * Config.playerConfig.forwardSpeed;
+
+        RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.MetersDug);
+
+        if (PlayerService.HasPlayerBrokenRecord())
+        {
+            RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.HighestDug);
+
+            if (!PlayerService.instance.highestMeterRecordBroken)
+            {
+                SoundManager.instance.PlayClip(SoundManager.SoundClip.BeatPBNoise);
+                PlayerService.instance.highestMeterRecordBroken = true;
+            }
+        }
     }
 
     public void OnAxis(InputAction.CallbackContext callbackContext)

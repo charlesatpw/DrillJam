@@ -23,6 +23,9 @@ public class Context : MonoBehaviour
             LocalPlayerData.SaveData(LocalPlayerData.instance.localData);
         }
 
+        PlayerService playerService = new PlayerService();
+        PlayerService.instance = playerService;
+
         initialised = true;
     }
 }
