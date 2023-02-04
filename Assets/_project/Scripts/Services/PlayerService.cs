@@ -9,9 +9,9 @@ public class PlayerService
 
     public static bool HasPlayerBrokenRecord()
     {
-        return LocalPlayerData.instance.localData.currentMScore > LocalPlayerData.instance.localData.highestMScore;
+        return LocalPlayerData.instance.localData.currentMScore > LocalPlayerData.instance.localData.highestMScore 
+            || (LocalPlayerData.instance.localData.highestMScore == 0 && LocalPlayerData.instance.localData.currentMScore > 0);
     }
-
 
     public static void IncreaseStat(PlayerStats statToIncrease, int amount, bool save = false)
     {

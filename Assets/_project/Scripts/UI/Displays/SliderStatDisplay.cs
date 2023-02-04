@@ -18,7 +18,7 @@ public class SliderStatDisplay : StatDisplay
         statSlider.maxValue = maxValue;
     }
 
-    public override void SetAmount(int amount)
+    public override void SetAmount(int amount, string suffix = null, string prefix = null)
     {
         if (statSlider.value != amount)
         {

@@ -37,11 +37,11 @@ public class MainGameUI : MonoBehaviour
 
     public void UpdateCurrentMetersDugText(int metersDug)
     {
-        currentMDug.SetAmount(metersDug);
+        currentMDug.SetAmount(metersDug, "m", string.Empty);
     }
 
     public void UpdateHighscoreMetersDugText(int metersDug)
     {
-        highscoreMDug.SetAmount(metersDug);
+        highscoreMDug.SetAmount(metersDug, "m", "Highscore: ");
     }
 }

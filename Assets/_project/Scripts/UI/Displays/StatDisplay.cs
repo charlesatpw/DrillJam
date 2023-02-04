@@ -16,8 +16,8 @@ public class StatDisplay : MonoBehaviour
         amountText.text = amount;
     }
 
-    public virtual void SetAmount(int amount)
+    public virtual void SetAmount(int amount, string suffix, string prefix)
     {
-        amountText.text = amount.ToString();
+        amountText.text = prefix + amount.ToString() + suffix;
     }
 }

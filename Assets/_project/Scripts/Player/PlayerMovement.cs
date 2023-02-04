@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
+    [SerializeField]
+    Transform topOfMapObject;
+
     public void Update()
     {
         float rotationChange = leftRightAxis * Time.deltaTime * Config.playerConfig.turnSpeed;
@@ -32,10 +35,12 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0, 0, rotationChange);
         transform.position += transform.up * -1f * Time.deltaTime * Config.playerConfig.forwardSpeed;
 
+        LocalPlayerData.instance.localData.currentMScore = Mathf.Abs((int)(transform.position.y + Mathf.Abs(topOfMapObject.position.y)));
         RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.MetersDug);
 
         if (PlayerService.HasPlayerBrokenRecord())
         {
+            LocalPlayerData.instance.localData.highestMScore = LocalPlayerData.instance.localData.currentMScore;
             RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.HighestDug);
 
             if (!PlayerService.instance.highestMeterRecordBroken)

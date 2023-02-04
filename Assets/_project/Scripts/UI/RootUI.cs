@@ -50,7 +50,7 @@ public class RootUI : MonoBehaviour
                     mainGame.UpdateCurrentMetersDugText(LocalPlayerData.instance.localData.currentMScore);
                     break;
                 case PlayerStats.HighestDug:
-                    mainGame.UpdateHighscoreMetersDugText(LocalPlayerData.instance.localData.currentMScore);
+                    mainGame.UpdateHighscoreMetersDugText(LocalPlayerData.instance.localData.highestMScore);
                     break;
                 default:
 #if UNITY_EDITOR
