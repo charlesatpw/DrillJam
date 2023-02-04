@@ -42,7 +42,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BlendHeight: 0.6
-    - _NoiseStrength: 0.1
+    - _NoiseStrength: 0.3
     m_Colors:
     - _EndColour: {r: 0.6132076, g: 0.24326274, b: 0.013883931, a: 1}
     - _StartColour: {r: 0.15094334, g: 0.04725077, b: 0.006265569, a: 1}
