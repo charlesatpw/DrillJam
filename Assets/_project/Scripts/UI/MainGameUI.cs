@@ -14,6 +14,9 @@ public class MainGameUI : MonoBehaviour
     [SerializeField]
     StatDisplay highscoreMDug;
 
+    [SerializeField]
+
+
     private void Start()
     {
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
@@ -43,5 +46,10 @@ public class MainGameUI : MonoBehaviour
     public void UpdateHighscoreMetersDugText(int metersDug)
     {
         highscoreMDug.SetAmount(metersDug, "m", "Highscore: ");
+    }
+
+    public void ShowWinScreen()
+    {
+
     }
 }
