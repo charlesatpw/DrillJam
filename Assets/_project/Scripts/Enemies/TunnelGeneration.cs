@@ -8,6 +8,8 @@ public class TunnelGeneration : MonoBehaviour
 
     public Transform playerTransform;
 
+    float lastSpawnY = 0;
+
     public GameObject tunnelPrefab;
 
     public float spawnDistanceFromPlayer = 1f;
@@ -17,46 +19,49 @@ public class TunnelGeneration : MonoBehaviour
     public float segmentLengthVariation = 1f;
     public float segmentangAngleVariation = 1f;
 
-    public void Start()
+    public float boundsOffset;
+
+    private void Update()
     {
-        for (int i = 0; i < 10; ++i)
+        if (lastSpawnY > playerTransform.position.y - spawnDistanceFromPlayer)
         {
-            GenerateTunnel(i * 20);
+            lastSpawnY -= Random.Range(-5f, 5f) + spawnDistanceFromPlayer;
+            GenerateTunnel();
         }
     }
 
-    public void GenerateTunnel(float yPlus)
+    public void GenerateTunnel()
     {
         // Coin-Flip for left to right or right to left
         bool leftToRight = Random.Range(0, 2) == 0;
-        float xPosition = leftToRight ? levelbounds.bounds.min.x - 10 : levelbounds.bounds.max.x + 10;
+        float xPosition = leftToRight ? levelbounds.bounds.min.x - boundsOffset : levelbounds.bounds.max.x + boundsOffset;
 
         // Select starting point
         List<Vector3> points = new List<Vector3>();
-        Vector3 startingPoint = new Vector3(xPosition, playerTransform.position.y + spawnDistanceFromPlayer - yPlus, 0);
+        Vector3 startingPoint = new Vector3(xPosition, (playerTransform.position.y - spawnDistanceFromPlayer) + lastSpawnY, 0);
         points.Add(startingPoint);
         if (leftToRight)
         {
-            while (points[points.Count - 1].x < levelbounds.bounds.max.x + 10)
+            while (points[points.Count - 1].x < levelbounds.bounds.max.x + boundsOffset)
             {
                 points.Add(SelectNextPoint(leftToRight, points[points.Count - 1]));
             }
         }
         else
         {
-            while (points[points.Count - 1].x > levelbounds.bounds.min.x - 10)
+            while (points[points.Count - 1].x > levelbounds.bounds.min.x - boundsOffset)
             {
                 points.Add(SelectNextPoint(leftToRight, points[points.Count - 1]));
             }
         }
-        Instantiate(tunnelPrefab, startingPoint, new Quaternion(0, 0, 0, 0), transform).GetComponent<Tunnel>().Init(points.ToArray());
+        Instantiate(tunnelPrefab, startingPoint, new Quaternion(0, 0, 0, 0), transform).GetComponent<Tunnel>().Init(points.ToArray(), leftToRight);
     }
 
     public Vector3 SelectNextPoint(bool leftToRight, Vector3 startingPoint)
     {
         float xValue = leftToRight ? 1f : -1f;
         float yValue = Random.Range(-1f, 1f);
-        Vector3 direction = new Vector3(xValue, yValue, 0f);
+        Vector3 direction = new Vector3(xValue, yValue, -0.01f);
 
         return startingPoint += direction.normalized * (baseSegmentLength + segmentLengthVariation);
     }

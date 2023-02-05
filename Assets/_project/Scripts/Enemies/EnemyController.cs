@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    int health;
-    float speed;
-    float damageOnHit;
+    protected int health;
+    protected float speed = 10f;
+    protected float damageOnHit;
 
     void Init(EnemyTemplate template)
     {

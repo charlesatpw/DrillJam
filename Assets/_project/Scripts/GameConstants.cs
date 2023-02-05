@@ -7,6 +7,11 @@ public enum Items
     Item_Radiation_Barrel
 }
 
+public enum Enemy
+{
+    Ant_Soldier
+}
+
 public class GameConstants
 {
     //Scenes
@@ -49,6 +54,19 @@ public class GameConstants
                 returnString = RadiationBarrel;
                 break;
         }
+
+        return returnString;
+    }
+
+    public static string GetEnemyStringBasedOnType(Enemy enemy)
+    {
+        string returnString = string.Empty;
+        switch (enemy)
+        {
+            case Enemy.Ant_Soldier:
+                return Ant_Soldier;
+        }
+
 
         return returnString;
     }
