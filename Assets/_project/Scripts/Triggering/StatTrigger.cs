@@ -6,6 +6,8 @@ public class StatTrigger : AbstractTriggerable
 {
     public PlayerStats statToModifiy;
 
+    public int amount;
+
     private void OnEnable()
     {
         playerHitAction += OnPlayerHit;
@@ -18,7 +20,7 @@ public class StatTrigger : AbstractTriggerable
 
     public void OnPlayerHit()
     {
-        PlayerService.IncreaseStat(statToModifiy, );
+        PlayerService.IncreaseStat(statToModifiy, amount);
         Destroy(gameObject);
     }
 }
