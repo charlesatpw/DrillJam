@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     private PlayerInput playerInput;
 
     public bool playerEnabled = true;
+
+    CancellationTokenSource cancellationTokenSource;
 
     private void Start()
     {
@@ -35,19 +38,22 @@ public class PlayerManager : MonoBehaviour
 
     async UniTask DepleteFuel()
     {
-        if (!playerEnabled)
-        {
-            await UniTask.Yield();
-        }
+        CancellationToken cancellationToken = gameObject.GetCancellationTokenOnDestroy();
 
-        while (playerEnabled)
+        while (!cancellationToken.IsCancellationRequested)
         {
-            await UniTask.Delay(1000);
-            //Updating fuel
-            PlayerService.DecreaseStat(PlayerStats.Fuel, Config.rootConfig.fuelLossRate, false);
-        }
+            while (!playerEnabled)
+            {
+                await UniTask.Yield(cancellationToken: this.GetCancellationTokenOnDestroy());
+            }
 
-        _ = DepleteFuel();
+            while (playerEnabled)
+            {
+                await UniTask.Delay(1000, cancellationToken: this.GetCancellationTokenOnDestroy());
+                //Updating fuel
+                PlayerService.DecreaseStat(PlayerStats.Fuel, Config.rootConfig.fuelLossRate, false);
+            }
+        }
     }
 
     public void DisablePlayer()

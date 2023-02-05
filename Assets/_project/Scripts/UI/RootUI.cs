@@ -23,6 +23,8 @@ public class RootUI : MonoBehaviour
     public event PlayerEventHandler playerDeath;
     public event PlayerEventHandler playerWin;
 
+    public bool playerDied;
+
     private void Awake()
     {
         if (instance)
@@ -34,6 +36,11 @@ public class RootUI : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        playerDied = false;
+    }
+
     public MainGameUI GetMainGameUI() 
     { 
         return mainGame; 
@@ -43,6 +50,11 @@ public class RootUI : MonoBehaviour
     {
         if (mainGame)
         {
+            if (playerDied)
+            {
+                return;
+            }
+
             switch (stats) 
             {
                 case PlayerStats.Health:
@@ -66,6 +78,7 @@ public class RootUI : MonoBehaviour
 
             if (PlayerService.isPlayerDead())
             {
+                playerDied = true;
                 CallPlayerDeath();
             }
         }

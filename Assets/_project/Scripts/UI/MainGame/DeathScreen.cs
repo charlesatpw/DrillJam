@@ -17,7 +17,7 @@ public class DeathScreen : MonoBehaviour
         menuButton.onClick.RemoveAllListeners();
         menuButton.onClick.AddListener(GoToMenu);
 
-        menuButton.onClick.RemoveAllListeners();
+        retryButton.onClick.RemoveAllListeners();
         retryButton.onClick.AddListener(ResetLevel);
     }
 
