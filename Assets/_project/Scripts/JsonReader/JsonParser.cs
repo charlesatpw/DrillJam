@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class JsonParser
 {
-    public const string jsonPath = "configs/";
+    public static string jsonPath = Application.streamingAssetsPath + "/configs/";
 
     public static object ReadFile<Type>(string type)
     {
