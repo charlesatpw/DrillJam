@@ -20,4 +20,9 @@ public class MainPage : MonoBehaviour
         backButton.onClick.RemoveAllListeners();
         backButton.onClick.AddListener(() => mainMenu.OpenPage(MainMenuUI.MainPageType.None));
     }
+
+    public virtual void OnClose()
+    {
+
+    }
 }

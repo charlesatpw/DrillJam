@@ -19,6 +19,7 @@ public class MainGameUI : MonoBehaviour
 
     private void Start()
     {
+        currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
 
         int playerMaxFuel = Config.playerConfig.maxFuel;

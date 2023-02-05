@@ -51,12 +51,15 @@ public class MainMenuUI : MonoBehaviour
         if (currentPage != null)
         {
             currentPage.gameObject.SetActive(false);
+            currentPage.OnClose();
+            currentPage = null;
         }
 
         openPage = page;
 
         if (page != MainPageType.None)
         {
+            currentPage = pages[(int)page];
             pages[(int)page].gameObject.SetActive(true);
             pages[(int)page].Init(this);
         }

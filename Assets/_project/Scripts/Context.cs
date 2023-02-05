@@ -9,13 +9,15 @@ public class Context : MonoBehaviour
 
     private void Awake()
     {
-        if (Config.FilesRead())
+        LocalPlayerData.instance = new LocalPlayerData();
+
+        if (Config.FilesRead() && LocalPlayerData.instance.localData != null)
         {
+            initialised = true;
             return;
         }
 
         Config.ReadConfigFiles();
-        LocalPlayerData.instance = new LocalPlayerData();
 
         if (LocalPlayerData.instance.localData == null)
         {

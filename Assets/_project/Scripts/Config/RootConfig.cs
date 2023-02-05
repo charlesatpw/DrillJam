@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class RootConfig
 {
+    public List<int> minForNextLayer = new List<int>();
 
+    public RootConfig()
+    {
+
+    }
 }
