@@ -75,6 +75,7 @@ public class RootUI : MonoBehaviour
     {
         if (playerWin != null)
         {
+            LocalPlayerData.SaveData();
             playerWin.Invoke();
         }
     }
@@ -83,6 +84,7 @@ public class RootUI : MonoBehaviour
     {
         if (playerDeath != null)
         {
+            LocalPlayerData.SaveData();
             playerDeath.Invoke();
         }
     }

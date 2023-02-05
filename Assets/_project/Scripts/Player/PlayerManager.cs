@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerManager : MonoBehaviour
     private PlayerMovement playerMovement;
     [SerializeField]
     private PlayerTriggerManager playerTriggerManager;
+
+    [SerializeField]
+    private PlayerInput playerInput;
 
     public bool playerEnabled = true;
 
@@ -20,14 +24,16 @@ public class PlayerManager : MonoBehaviour
 
     private void OnEnable()
     {
-        RootUI.instance.playerDeath += DisablePlayer;
-        RootUI.instance.playerWin += DisablePlayer;
+        _ = SubscribePlayerEvents();
     }
 
     private void OnDisable()
     {
-        RootUI.instance.playerDeath -= DisablePlayer;
-        RootUI.instance.playerWin -= DisablePlayer;
+        if (RootUI.instance)
+        {
+            RootUI.instance.playerDeath -= DisablePlayer;
+            RootUI.instance.playerWin -= DisablePlayer;
+        }
     }
 
     async UniTask DepleteFuel()
@@ -52,6 +58,7 @@ public class PlayerManager : MonoBehaviour
         playerEnabled = false;
         playerMovement.enabled = false;
         playerTriggerManager.enabled = false;
+        playerInput.DeactivateInput();
     }
 
     public void EnablePlayer()
@@ -60,5 +67,13 @@ public class PlayerManager : MonoBehaviour
 
         playerMovement.enabled = true;
         playerTriggerManager.enabled = true;
+        playerInput.ActivateInput();
+    }
+
+    async UniTask SubscribePlayerEvents()
+    {
+        await UniTask.WaitUntil(() => RootUI.instance != null);
+        RootUI.instance.playerDeath += DisablePlayer;
+        RootUI.instance.playerWin += DisablePlayer;
     }
 }

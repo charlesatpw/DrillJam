@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,14 +81,16 @@ public class SoundManager : MonoBehaviour
 
     private void OnEnable()
     {
-        RootUI.instance.playerDeath += PlayDeathSound;
-        RootUI.instance.playerWin += PlayWinSound;
+        _ = SubscribePlayerEvents();
     }
 
     private void OnDisable()
     {
-        RootUI.instance.playerDeath -= PlayDeathSound;
-        RootUI.instance.playerWin -= PlayWinSound;
+        if (RootUI.instance)
+        {
+            RootUI.instance.playerDeath -= PlayDeathSound;
+            RootUI.instance.playerWin -= PlayWinSound;
+        }
     }
 
     public void PlayClipWithSource(SoundClip soundClip, AudioSource source)
@@ -141,5 +144,12 @@ public class SoundManager : MonoBehaviour
     void PlayWinSound()
     {
         PlayClip(SoundClip.WinJingle);
+    }
+
+    async UniTask SubscribePlayerEvents()
+    {
+        await UniTask.WaitUntil(() => RootUI.instance != null);
+        RootUI.instance.playerDeath += PlayDeathSound;
+        RootUI.instance.playerWin += PlayWinSound;
     }
 }

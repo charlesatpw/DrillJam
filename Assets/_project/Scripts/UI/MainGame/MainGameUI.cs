@@ -42,8 +42,7 @@ public class MainGameUI : MonoBehaviour
 
     private void OnEnable()
     {
-        RootUI.instance.playerDeath += ShowDeathScreen;
-        RootUI.instance.playerWin += PlayerWon;
+        _ = SubscribePlayerEvents();
     }
 
     private void OnDisable()
@@ -79,12 +78,22 @@ public class MainGameUI : MonoBehaviour
 
     public async UniTask ShowWinScreen()
     {
+        winScreen.Init();
         await UniTask.Delay(3000);
         winScreen.gameObject.SetActive(true);
+
     }
 
     public void ShowDeathScreen()
     {
-        deathScreen.gameObject.SetActive(true);        
+        deathScreen.Init();
+        deathScreen.gameObject.SetActive(true);
+    }
+
+    async UniTask SubscribePlayerEvents()
+    {
+        await UniTask.WaitUntil(() => RootUI.instance != null);
+        RootUI.instance.playerDeath += ShowDeathScreen;
+        RootUI.instance.playerWin += PlayerWon;
     }
 }

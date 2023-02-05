@@ -1,18 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeathScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Button menuButton;
+
+    [SerializeField]
+    Button retryButton;
+
+    public void Init()
     {
-        
+        menuButton.onClick.RemoveAllListeners();
+        menuButton.onClick.AddListener(GoToMenu);
+
+        menuButton.onClick.RemoveAllListeners();
+        retryButton.onClick.AddListener(ResetLevel);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GoToMenu()
     {
-        
+        menuButton.interactable = false;
+        retryButton.interactable = false;
+
+        LoadingBuffer.instance = null;
+        SceneManager.LoadScene(GameConstants.LoadingScene);
+    }
+
+    private void ResetLevel()
+    {
+        menuButton.interactable = false;
+        retryButton.interactable = false;
+
+        LoadingBuffer.instance = new LoadingBuffer();
+        LoadingBuffer.instance.sceneToLoad = GameConstants.GameScene;
+        SceneManager.LoadScene(GameConstants.LoadingScene);
     }
 }
