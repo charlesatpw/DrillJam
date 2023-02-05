@@ -52,7 +52,7 @@ public class ItemPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (minY - maxYAddition < endOfLevelTransform.position.y)
+        if (minY < endOfLevelTransform.position.y)
         {
             Destroy(gameObject);
         }

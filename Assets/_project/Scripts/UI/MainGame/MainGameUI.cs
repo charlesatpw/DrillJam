@@ -91,7 +91,7 @@ public class MainGameUI : MonoBehaviour
     public async UniTask ShowWinScreen()
     {
         winScreen.Init();
-        await UniTask.Delay(5000);
+        await UniTask.Delay(43000);
         winScreen.gameObject.SetActive(true);
 
     }
