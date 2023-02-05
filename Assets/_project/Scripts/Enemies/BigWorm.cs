@@ -21,6 +21,13 @@ public class BigWorm : EnemyController
 
     public float timeBetweenActivations;
 
+    public SpriteRenderer spriteRenderer;
+
+    public Sprite angySprite;
+    public Sprite calmSprite;
+
+    public float mouthProximity;
+
     private void Start()
     {
         StartCoroutine(wormActivation(timeBetweenActivations));
@@ -35,6 +42,15 @@ public class BigWorm : EnemyController
     private void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
+
+        if (Vector3.Distance(playerPos.position, transform.position) < mouthProximity)
+        {
+            spriteRenderer.sprite = angySprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = calmSprite;
+        }
     }
 
     private IEnumerator wormActivation(float timeBetweenActivations)

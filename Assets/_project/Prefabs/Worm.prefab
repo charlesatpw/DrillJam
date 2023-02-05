@@ -135,6 +135,10 @@ MonoBehaviour:
   playerPos: {fileID: 0}
   leftToRight: 0
   timeBetweenActivations: 10
+  spriteRenderer: {fileID: 1608577422778234695}
+  angySprite: {fileID: 21300000, guid: 9b73e9e0ccc9fad4ca6634f692c89c94, type: 3}
+  calmSprite: {fileID: 21300000, guid: 9fb96407e34beaf4bb22010c63f6e5c9, type: 3}
+  mouthProximity: 10
 --- !u!70 &7144528353267712734
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
