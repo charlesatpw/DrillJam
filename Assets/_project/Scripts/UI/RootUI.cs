@@ -21,6 +21,7 @@ public class RootUI : MonoBehaviour
 
     public delegate void PlayerEventHandler();
     public event PlayerEventHandler playerDeath;
+    public event PlayerEventHandler playerWin;
 
     private void Awake()
     {
@@ -65,8 +66,24 @@ public class RootUI : MonoBehaviour
 
             if (PlayerService.isPlayerDead())
             {
-                playerDeath?.Invoke();
+                CallPlayerDeath();
             }
+        }
+    }
+
+    public void CallPlayerWin()
+    {
+        if (playerWin != null)
+        {
+            playerWin.Invoke();
+        }
+    }
+
+    public void CallPlayerDeath()
+    {
+        if (playerDeath != null)
+        {
+            playerDeath.Invoke();
         }
     }
 }

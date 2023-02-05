@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class MainGameUI : MonoBehaviour
     private void Start()
     {
         RootUI.instance.playerDeath += ShowDeathScreen;
+        RootUI.instance.playerWin += (async() => _ = ShowWinScreen());
 
         currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
@@ -61,8 +63,9 @@ public class MainGameUI : MonoBehaviour
         highscoreMDug.SetAmount(metersDug, "m", "Highscore: ");
     }
 
-    public void ShowWinScreen()
+    public async UniTask ShowWinScreen()
     {
+        await UniTask.Delay(3000);
         winScreen.gameObject.SetActive(true);
     }
 
