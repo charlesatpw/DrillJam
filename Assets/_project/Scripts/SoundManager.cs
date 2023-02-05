@@ -53,6 +53,11 @@ public class SoundManager : MonoBehaviour
 
     private void OnValidate()
     {
+        SetDictionary();
+    }
+
+    private void SetDictionary()
+    {
         for (int i = 0; i < soundClips.Count; ++i)
         {
             if (sounds.TryGetValue((SoundClip)i, out AudioClip soundClip))
@@ -78,6 +83,7 @@ public class SoundManager : MonoBehaviour
         }
 
         instance = this;
+        SetDictionary();
     }
 
     private void OnEnable()
