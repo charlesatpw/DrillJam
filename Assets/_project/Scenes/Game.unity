@@ -318,11 +318,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4672331465099775185, guid: 80f504f8ec0562e44a2a11c7d3c18cd9, type: 3}
   m_PrefabInstance: {fileID: 519449225}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &519449227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4672331465099775186, guid: 80f504f8ec0562e44a2a11c7d3c18cd9, type: 3}
+--- !u!114 &519449228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7326766534244037800, guid: 80f504f8ec0562e44a2a11c7d3c18cd9, type: 3}
   m_PrefabInstance: {fileID: 519449225}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bcf97df4dd6164b94c8b12d01f9c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680818192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,11 +2329,11 @@ PrefabInstance:
     - target: {fileID: 6971516204530757322, guid: 336e0c1a8e75fe84cb56c202fea91d4e, type: 3}
       propertyPath: winScreen
       value: 
-      objectReference: {fileID: 519449227}
+      objectReference: {fileID: 519449228}
     - target: {fileID: 6971516204530757322, guid: 336e0c1a8e75fe84cb56c202fea91d4e, type: 3}
       propertyPath: deathScreen
       value: 
-      objectReference: {fileID: 4672331463637295416}
+      objectReference: {fileID: 4672331463637295417}
     - target: {fileID: 6971516204530757323, guid: 336e0c1a8e75fe84cb56c202fea91d4e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

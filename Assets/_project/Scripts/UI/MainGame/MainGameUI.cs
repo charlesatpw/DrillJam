@@ -29,6 +29,9 @@ public class MainGameUI : MonoBehaviour
 
         int playerMaxHealth = Config.playerConfig.maxHealth;
         fuelSliderDisplay.Init(null, 0, playerMaxHealth);
+
+        winScreen.gameObject.SetActive(false);
+        deathScreen.gameObject.SetActive(false);
     }
 
     public void UpdateFuelSlider(int fuel)
