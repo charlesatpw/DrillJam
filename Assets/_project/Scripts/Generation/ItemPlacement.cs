@@ -25,6 +25,9 @@ public class ItemPlacement : MonoBehaviour
     [SerializeField]
     public BoxCollider2D levelBoundingBox;
 
+    [SerializeField]
+    private Transform endOfLevelTransform;
+
     public float minY;
     public float maxYAddition;
 
@@ -44,6 +47,7 @@ public class ItemPlacement : MonoBehaviour
         minX = levelBoundingBox.bounds.min.x + 3f;
         maxX = levelBoundingBox.bounds.max.x - 3f;
         minY = playerTransform.position.y - 30f;
+        maxYAddition = minY + (endOfLevelTransform.position.y - minY);
     }
 
     private void Update()

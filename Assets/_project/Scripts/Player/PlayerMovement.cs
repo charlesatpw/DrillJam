@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     Transform topOfMapObject;
+    [SerializeField] 
+    Transform bottomOfMapObject;
 
     [SerializeField]
     public BoxCollider2D levelBoundingBox;
@@ -67,6 +69,14 @@ public class PlayerMovement : MonoBehaviour
                 PlayerService.instance.highestMeterRecordBroken = true;
             }
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            transform.position = new Vector3(transform.position.x, bottomOfMapObject.position.y, transform.position.z);
+            RootUI.instance.CallPlayerWin();
+        }
+#endif
     }
 
     public void OnAxis(InputAction.CallbackContext callbackContext)

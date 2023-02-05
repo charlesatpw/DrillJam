@@ -373,6 +373,7 @@ MonoBehaviour:
   rock: {fileID: 7299240491493150198, guid: 6d4a5d28641fce44c9129032e3a3ab2b, type: 3}
   barrel: {fileID: 2500133526993917806, guid: 940ba987891ffe74abeb72faad5d9797, type: 3}
   levelBoundingBox: {fileID: 1854558239}
+  endOfLevelTransform: {fileID: 689117511}
   minY: 0
   maxYAddition: 50
   minX: -30
@@ -1453,6 +1454,10 @@ PrefabInstance:
       propertyPath: levelBoundingBox
       value: 
       objectReference: {fileID: 1854558239}
+    - target: {fileID: 2984724822603928836, guid: 5b215b2e2c096974a907aca9314d2f72, type: 3}
+      propertyPath: bottomOfMapObject
+      value: 
+      objectReference: {fileID: 689117511}
     - target: {fileID: 2984724822603928839, guid: 5b215b2e2c096974a907aca9314d2f72, type: 3}
       propertyPath: m_RootOrder
       value: 5
