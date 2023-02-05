@@ -28,10 +28,15 @@ public class MainGameUI : MonoBehaviour
         fuelSliderDisplay.Init(null, 0, playerMaxFuel);
 
         int playerMaxHealth = Config.playerConfig.maxHealth;
-        fuelSliderDisplay.Init(null, 0, playerMaxHealth);
+        healthSliderDisplay.Init(null, 0, playerMaxHealth);
 
         winScreen.gameObject.SetActive(false);
         deathScreen.gameObject.SetActive(false);
+
+        PlayerService.ResetHealth();
+        PlayerService.ResetFuel();
+        RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Fuel);
+        RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Health);
     }
 
     public void UpdateFuelSlider(int fuel)

@@ -15,11 +15,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerService.ResetHealth();
-        PlayerService.ResetFuel();
-        RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Fuel);
-        RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Health);
-
         _ = DepleteFuel();
     }
 
