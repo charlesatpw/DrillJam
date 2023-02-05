@@ -1,8 +1,6 @@
 using Cysharp.Threading.Tasks;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static SoundManager;
 
 public class SoundManager : MonoBehaviour
 {
@@ -28,7 +26,8 @@ public class SoundManager : MonoBehaviour
         BeatPBNoise,
         WinJingle,
         EnemyHit,
-        ItemPickup_RadioactiveBarrel
+        ItemPickup_RadioactiveBarrel,
+        ItemPickup_JerryCan
     }
 
     public enum VoiceLines
@@ -138,11 +137,13 @@ public class SoundManager : MonoBehaviour
 
     void PlayDeathSound()
     {
+        StopAllSounds();
         PlayClip(SoundClip.DeathJingle);
     }
 
     void PlayWinSound()
     {
+        StopAllSounds();
         PlayClip(SoundClip.WinJingle);
     }
 
@@ -151,5 +152,27 @@ public class SoundManager : MonoBehaviour
         await UniTask.WaitUntil(() => RootUI.instance != null);
         RootUI.instance.playerDeath += PlayDeathSound;
         RootUI.instance.playerWin += PlayWinSound;
+    }
+
+    public void PlayItemSound(Items itemType)
+    {
+        switch (itemType) 
+        {
+            case Items.Item_Jerry_Can:
+                PlayClip(SoundClip.ItemPickup_JerryCan);
+                break;
+            case Items.Item_Rock:
+                PlayClip(SoundClip.RockHit);
+                break;
+            case Items.Item_Fertilizer:
+                PlayClip(SoundClip.ItemPickup_Fert);
+                break;
+            case Items.Item_Water_Pocket:
+                PlayClip(SoundClip.ItemPickup_Water);
+                break;
+            case Items.Item_Radiation_Barrel:
+                PlayClip(SoundClip.ItemPickup_RadioactiveBarrel);
+                break;
+        }
     }
 }

@@ -29,6 +29,7 @@ public class StatTrigger : AbstractTriggerable
             PlayerService.IncreaseStat(statToModifiy, Config.itemConfig.items[templateId].statEffect);
         }
 
+        SoundManager.instance.PlayItemSound(itemType);
         Destroy(gameObject);
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,6 +43,11 @@ public class MainMenuUI : MonoBehaviour
 
         quitButton.onClick.RemoveAllListeners();
         quitButton.onClick.AddListener(Quit);
+    }
+
+    private void Start()
+    {
+        SoundManager.instance.PlayTrack(SoundManager.SoundClip.MenuMusic);
     }
 
     public void OpenPage(MainPageType page)

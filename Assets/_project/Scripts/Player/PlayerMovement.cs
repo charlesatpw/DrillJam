@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public BoxCollider2D levelBoundingBox;
 
+    private void Start()
+    {
+        SoundManager.instance.PlayClip(SoundManager.SoundClip.Drill);
+    }
+
     public void Update()
     {
         if (transform.position.x < levelBoundingBox.bounds.min.x)

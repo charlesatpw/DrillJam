@@ -22,6 +22,8 @@ public class MainGameUI : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.instance.PlayTrack(SoundManager.SoundClip.GameMusic);
+
         currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
 
