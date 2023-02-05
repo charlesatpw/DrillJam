@@ -17,6 +17,9 @@ public class ItemPlacement : MonoBehaviour
     public GameObject fuel;
 
     [SerializeField]
+    public GameObject rock;
+
+    [SerializeField]
     public BoxCollider2D levelBoundingBox;
 
     public float minY;
@@ -109,6 +112,10 @@ public class ItemPlacement : MonoBehaviour
         else if (randomValue < Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
             return fuel;
+        }
+        else if (randomValue < Config.itemConfig.items[GameConstants.Rock].weight + Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
+        {
+            return rock;
         }
         else
         {

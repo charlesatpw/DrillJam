@@ -1,3 +1,11 @@
+public enum Items
+{
+    Item_Fertilizer,
+    Item_Jerry_Can,
+    Item_Water_Pocket,
+    Item_Rock
+}
+
 public class GameConstants
 {
     //Scenes
@@ -16,4 +24,27 @@ public class GameConstants
     public const string Fertilizer = "Fertilizer";
     public const string Jerry_Can = "Jerry_Can";
     public const string Water_Pocket = "Water_Pocket";
+    public const string Rock = "Rock";
+
+    public static string GetItemStringBasedOnType(Items item)
+    {
+        string returnString = string.Empty;
+        switch (item) 
+        {
+            case Items.Item_Jerry_Can:
+                returnString = Jerry_Can;
+                break;
+            case Items.Item_Water_Pocket:
+                returnString = Water_Pocket;
+                break;
+            case Items.Item_Fertilizer:
+                returnString = Fertilizer;
+                break;
+            case Items.Item_Rock:
+                returnString = Rock;
+                break;
+        }
+
+        return returnString;
+    }
 }

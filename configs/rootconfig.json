@@ -1,4 +1,5 @@
 {
+ "fuelLossRate" : 2,
  "minForNextLayer" : [
       1250, 4000, 5500
  ]
