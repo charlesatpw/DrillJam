@@ -4,22 +4,28 @@
   "itemSectionCount" : 20,
   "items" : {
     "Jerry_Can" : {
-        "weight" : 0.33,
-        "minSpawnDepth" : 50,
+        "weight" : 0.25,
+        "minSpawnDepth" : 250,
         "statEffect" : 20,
         "damaging" : false
     },
     "Water_Pocket" : {
-        "weight" : 0.334,
+        "weight" : 0.25,
         "minSpawnDepth" : 100,
         "statEffect" : 20,
         "damaging" : false
     },
     "Fertilizer" : {
-        "weight" : 0.33,
-        "minSpawnDepth" : 100,
+        "weight" : 0.25,
+        "minSpawnDepth" : 1000,
         "statEffect" : 20,
         "damaging" : false
-    }
+    },
+    "Rock" : {
+      "weight" : 0.25,
+      "minSpawnDepth" : 50,
+      "statEffect" : 20,
+      "damaging" : true
+  }
   }
 }

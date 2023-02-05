@@ -70,4 +70,9 @@ public class PlayerService
     {
         return (LocalPlayerData.instance.localData.health <= 0 || LocalPlayerData.instance.localData.fuel <= 0);
     }
+
+    public static void ResetFuel()
+    {
+        LocalPlayerData.instance.localData.fuel = Config.playerConfig.maxFuel;
+    }
 }

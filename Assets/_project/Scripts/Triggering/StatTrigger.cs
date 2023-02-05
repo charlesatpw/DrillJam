@@ -5,8 +5,7 @@ using UnityEngine;
 public class StatTrigger : AbstractTriggerable
 {
     public PlayerStats statToModifiy;
-
-    public int amount;
+    public Items itemType; 
 
     private void OnEnable()
     {
@@ -20,7 +19,16 @@ public class StatTrigger : AbstractTriggerable
 
     public void OnPlayerHit()
     {
-        PlayerService.IncreaseStat(statToModifiy, amount);
+        string templateId = GameConstants.GetItemStringBasedOnType(itemType);
+        if (Config.itemConfig.items[templateId].damaging)
+        {
+            PlayerService.DecreaseStat(statToModifiy, Config.itemConfig.items[templateId].statEffect);
+        }
+        else
+        {
+            PlayerService.IncreaseStat(statToModifiy, Config.itemConfig.items[templateId].statEffect);
+        }
+
         Destroy(gameObject);
     }
 }

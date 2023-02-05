@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statToModifiy: 2
+  itemType: 1
 --- !u!61 &8589818569737237499
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0, 0, rotationChange);
         transform.position += transform.up * -1f * Time.deltaTime * Config.playerConfig.forwardSpeed;
 
-        LocalPlayerData.instance.localData.currentMScore = Mathf.Abs((int)(transform.position.y + Mathf.Abs(topOfMapObject.position.y)));
+        //Meters dug calculations
+        LocalPlayerData.instance.localData.currentMScore = Mathf.RoundToInt(LevelService.GetMetersFromTop(topOfMapObject, transform.position.y));
         RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.MetersDug);
 
         if (PlayerService.HasPlayerBrokenRecord())
