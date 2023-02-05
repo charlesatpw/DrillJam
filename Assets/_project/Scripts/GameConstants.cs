@@ -9,7 +9,8 @@ public enum Items
 
 public enum Enemy
 {
-    Ant_Soldier
+    Ant_Soldier,
+    Worm
 }
 
 public class GameConstants
@@ -65,6 +66,9 @@ public class GameConstants
         {
             case Enemy.Ant_Soldier:
                 return Ant_Soldier;
+            case Enemy.Worm:
+                return Worm;
+                break;
         }
 
 

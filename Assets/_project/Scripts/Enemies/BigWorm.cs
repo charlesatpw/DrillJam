@@ -41,6 +41,7 @@ public class BigWorm : EnemyController
     {
         yield return new WaitForSeconds(timeBetweenActivations);
         yield return new WaitUntil(AtEnd);
+        yield return new WaitUntil(DeepEnough);
         transform.position = GetSpawnPoint();
         Vector3 aimPoint = new Vector3(playerPos.position.x, playerPos.position.y, transform.position.z) + playerPos.up * -10f;
         transform.LookAt(aimPoint);
@@ -49,8 +50,12 @@ public class BigWorm : EnemyController
 
     private bool AtEnd()
     {
-         
         return leftToRight ? transform.position.x > levelBounds.bounds.max.x + 10 : transform.position.x < levelBounds.bounds.min.x - 10;
+    }
+
+    private bool DeepEnough()
+    {
+        return playerPos.position.y < -Config.enemyConfig.enemies[GameConstants.Worm].minSpawnDepth;
     }
 
     private Vector3 GetSpawnPoint()
