@@ -11,6 +11,7 @@ public class TunnelGeneration : MonoBehaviour
     float lastSpawnY = 0;
 
     public GameObject tunnelPrefab;
+    public GameObject moleTunnelPrfab;
 
     public float spawnDistanceFromPlayer = 1f;
 
@@ -54,7 +55,17 @@ public class TunnelGeneration : MonoBehaviour
                 points.Add(SelectNextPoint(leftToRight, points[points.Count - 1]));
             }
         }
-        Instantiate(tunnelPrefab, startingPoint, new Quaternion(0, 0, 0, 0), transform).GetComponent<Tunnel>().Init(points.ToArray(), leftToRight);
+
+        int choice = Random.Range(0, 100);
+
+        if (choice < 75)
+        {
+            Instantiate(tunnelPrefab, startingPoint, new Quaternion(0, 0, 0, 0), transform).GetComponent<Tunnel>().Init(points.ToArray(), leftToRight);
+        }
+        else
+        {
+            Instantiate(moleTunnelPrfab, startingPoint, new Quaternion(0, 0, 0, 0), transform).GetComponent<Tunnel>().Init(points.ToArray(), leftToRight);
+        }
     }
 
     public Vector3 SelectNextPoint(bool leftToRight, Vector3 startingPoint)

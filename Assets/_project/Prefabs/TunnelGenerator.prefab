@@ -47,6 +47,7 @@ MonoBehaviour:
   levelbounds: {fileID: 0}
   playerTransform: {fileID: 0}
   tunnelPrefab: {fileID: 7667888716944637774, guid: 7b7de65f7031cb848822315f02a3fcf8, type: 3}
+  moleTunnelPrfab: {fileID: 8543728978935927979, guid: 38581f92cf6289744a62222a0ded81dd, type: 3}
   spawnDistanceFromPlayer: 30
   baseSegmentLength: 1
   segmentLengthVariation: 1
