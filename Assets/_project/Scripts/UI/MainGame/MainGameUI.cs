@@ -22,9 +22,6 @@ public class MainGameUI : MonoBehaviour
 
     private void Start()
     {
-        RootUI.instance.playerDeath += ShowDeathScreen;
-        RootUI.instance.playerWin += (async() => _ = ShowWinScreen());
-
         currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
 
@@ -41,6 +38,18 @@ public class MainGameUI : MonoBehaviour
         PlayerService.ResetFuel();
         RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Fuel);
         RootUI.instance.NotifyGameUIOfStatChange(PlayerStats.Health);
+    }
+
+    private void OnEnable()
+    {
+        RootUI.instance.playerDeath += ShowDeathScreen;
+        RootUI.instance.playerWin += PlayerWon;
+    }
+
+    private void OnDisable()
+    {
+        RootUI.instance.playerDeath -= ShowDeathScreen;
+        RootUI.instance.playerWin -= PlayerWon;
     }
 
     public void UpdateFuelSlider(int fuel)
@@ -61,6 +70,11 @@ public class MainGameUI : MonoBehaviour
     public void UpdateHighscoreMetersDugText(int metersDug)
     {
         highscoreMDug.SetAmount(metersDug, "m", "Highscore: ");
+    }
+
+    void PlayerWon()
+    {
+        _ = ShowWinScreen();
     }
 
     public async UniTask ShowWinScreen()

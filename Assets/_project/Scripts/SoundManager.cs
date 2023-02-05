@@ -78,6 +78,18 @@ public class SoundManager : MonoBehaviour
         instance = this;
     }
 
+    private void OnEnable()
+    {
+        RootUI.instance.playerDeath += PlayDeathSound;
+        RootUI.instance.playerWin += PlayWinSound;
+    }
+
+    private void OnDisable()
+    {
+        RootUI.instance.playerDeath -= PlayDeathSound;
+        RootUI.instance.playerWin -= PlayWinSound;
+    }
+
     public void PlayClipWithSource(SoundClip soundClip, AudioSource source)
     {
         if (sounds.TryGetValue(soundClip, out AudioClip clipToPlay) && sfxSource)
@@ -119,5 +131,15 @@ public class SoundManager : MonoBehaviour
         sfxSource.Stop();
         musicSource.Stop();
         voiceLineSource.Stop();
+    }
+
+    void PlayDeathSound()
+    {
+        PlayClip(SoundClip.DeathJingle);
+    }
+
+    void PlayWinSound()
+    {
+        PlayClip(SoundClip.WinJingle);
     }
 }

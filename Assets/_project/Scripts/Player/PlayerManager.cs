@@ -16,7 +16,18 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         _ = DepleteFuel();
+    }
+
+    private void OnEnable()
+    {
         RootUI.instance.playerDeath += DisablePlayer;
+        RootUI.instance.playerWin += DisablePlayer;
+    }
+
+    private void OnDisable()
+    {
+        RootUI.instance.playerDeath -= DisablePlayer;
+        RootUI.instance.playerWin -= DisablePlayer;
     }
 
     async UniTask DepleteFuel()
