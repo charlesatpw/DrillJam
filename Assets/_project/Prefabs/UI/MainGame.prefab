@@ -70,8 +70,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Highscore: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 383c01a1fcc3ba54c92f92d4514a303b, type: 2}
+  m_sharedMaterial: {fileID: -147291727063941183, guid: 383c01a1fcc3ba54c92f92d4514a303b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -731,6 +731,8 @@ MonoBehaviour:
   healthSliderDisplay: {fileID: 8514298089380069460}
   currentMDug: {fileID: 697792229293961345}
   highscoreMDug: {fileID: 4848341894863334620}
+  winScreen: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!1 &6971516204576787049
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,8 +878,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0m
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 383c01a1fcc3ba54c92f92d4514a303b, type: 2}
+  m_sharedMaterial: {fileID: -147291727063941183, guid: 383c01a1fcc3ba54c92f92d4514a303b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
