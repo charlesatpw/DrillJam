@@ -47,12 +47,16 @@ public class ItemPlacement : MonoBehaviour
         minX = levelBoundingBox.bounds.min.x + 3f;
         maxX = levelBoundingBox.bounds.max.x - 3f;
         minY = playerTransform.position.y - 30f;
-        maxYAddition = minY + (endOfLevelTransform.position.y - minY);
+        //maxYAddition = minY + (endOfLevelTransform.position.y - minY);
     }
 
     private void Update()
     {
-        if (playerTransform.position.y < minY + maxYAddition)
+        if (minY - maxYAddition < endOfLevelTransform.position.y)
+        {
+            Destroy(gameObject);
+        }
+        else if (playerTransform.position.y < minY + maxYAddition)
         {
             minY = minY - maxYAddition;
             SpawnSectionOfItems(numberOfItem);
