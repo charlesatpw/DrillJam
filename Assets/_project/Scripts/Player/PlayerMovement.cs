@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.instance.PlayClip(SoundManager.SoundClip.Drill);
+        SoundManager.instance.PlayClipWithSource(SoundManager.SoundClip.Drill, SoundManager.instance.loopSource);
     }
 
     public void Update()

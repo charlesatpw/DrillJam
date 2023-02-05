@@ -45,6 +45,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource voiceLineSource;
 
+    public AudioSource loopSource;
+
     private static Dictionary<SoundClip, AudioClip> sounds= new Dictionary<SoundClip, AudioClip>();
     [SerializeField]
     private List<AudioClip> soundClips = new List<AudioClip>(); 
@@ -130,9 +132,25 @@ public class SoundManager : MonoBehaviour
 
     public void StopAllSounds()
     {
-        sfxSource.Stop();
-        musicSource.Stop();
-        voiceLineSource.Stop();
+        if (sfxSource.isPlaying)
+        {
+            sfxSource.Stop();
+        }
+
+        if (musicSource.isPlaying)
+        {
+            musicSource.Stop();
+        }
+
+        if (voiceLineSource.isPlaying)
+        {
+            voiceLineSource.Stop();
+        }
+
+        if (loopSource.isPlaying)
+        {
+            loopSource.Stop();
+        }
     }
 
     void PlayDeathSound()
