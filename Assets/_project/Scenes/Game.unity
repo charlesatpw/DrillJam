@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2484,33 +2484,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764269321}
     m_Modifications:
-    - target: {fileID: 3432039502264783659, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551579512806950361, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551579512806950361, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551579512806950361, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 288
-      objectReference: {fileID: 0}
-    - target: {fileID: 3551579512806950361, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -112.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6256100169537474032, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
       propertyPath: m_Name
       value: DeathScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256100169537474032, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6256100169537474035, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
       propertyPath: m_Pivot.x
@@ -2596,26 +2572,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6256100170027635405, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256100170477531860, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256100170477531860, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256100170477531860, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 864
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256100170477531860, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -112.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd94e95fbdbf71b4facc25a549c61b0e, type: 3}
 --- !u!1001 &6971516205713271389
@@ -2645,6 +2601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainGame
       objectReference: {fileID: 0}
+    - target: {fileID: 6971516204530757322, guid: 336e0c1a8e75fe84cb56c202fea91d4e, type: 3}
+      propertyPath: treeImage
+      value: 
+      objectReference: {fileID: 331940718}
     - target: {fileID: 6971516204530757322, guid: 336e0c1a8e75fe84cb56c202fea91d4e, type: 3}
       propertyPath: winScreen
       value: 
