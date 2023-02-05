@@ -58,6 +58,11 @@ public class RootUI : MonoBehaviour
 #endif
                     break;
             }
+
+            if (PlayerService.isPlayerDead())
+            {
+                mainGame.ShowDeathScreen();
+            }
         }
     }
 }

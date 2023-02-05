@@ -15,7 +15,9 @@ public class MainGameUI : MonoBehaviour
     StatDisplay highscoreMDug;
 
     [SerializeField]
-
+    WinScreen winScreen;
+    [SerializeField]
+    DeathScreen deathScreen;
 
     private void Start()
     {
@@ -51,6 +53,11 @@ public class MainGameUI : MonoBehaviour
 
     public void ShowWinScreen()
     {
+        winScreen.gameObject.SetActive(true);
+    }
 
+    public void ShowDeathScreen()
+    {
+        deathScreen.gameObject.SetActive(true);
     }
 }
