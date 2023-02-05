@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         _ = DepleteFuel();
+        RootUI.instance.playerDeath += DisablePlayer;
     }
 
     async UniTask DepleteFuel()

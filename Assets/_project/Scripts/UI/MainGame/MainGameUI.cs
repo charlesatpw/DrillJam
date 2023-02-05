@@ -21,6 +21,8 @@ public class MainGameUI : MonoBehaviour
 
     private void Start()
     {
+        RootUI.instance.playerDeath += ShowDeathScreen;
+
         currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
         highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
 
@@ -66,6 +68,6 @@ public class MainGameUI : MonoBehaviour
 
     public void ShowDeathScreen()
     {
-        deathScreen.gameObject.SetActive(true);
+        deathScreen.gameObject.SetActive(true);        
     }
 }

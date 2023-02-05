@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,9 @@ public class RootUI : MonoBehaviour
 
     [SerializeField]
     private MainGameUI mainGame;
+
+    public delegate void PlayerEventHandler();
+    public event PlayerEventHandler playerDeath;
 
     private void Awake()
     {
@@ -61,7 +65,7 @@ public class RootUI : MonoBehaviour
 
             if (PlayerService.isPlayerDead())
             {
-                mainGame.ShowDeathScreen();
+                playerDeath?.Invoke();
             }
         }
     }
