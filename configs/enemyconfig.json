@@ -30,7 +30,7 @@
         },
         "Worm" : {
             "weight" : 0.25,
-            "speed" : 15,
+            "speed" : 40,
             "damage" :  20,
             "health" :  25,
             "minSpawnDepth" : 300

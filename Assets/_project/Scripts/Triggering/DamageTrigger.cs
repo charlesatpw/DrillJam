@@ -7,6 +7,8 @@ public class DamageTrigger : AbstractTriggerable
     public PlayerStats statToModifiy;
     public Enemy enemyType;
 
+    public bool dontDestroy;
+
     private void OnEnable()
     {
         playerHitAction += OnPlayerHit;
@@ -17,10 +19,11 @@ public class DamageTrigger : AbstractTriggerable
         playerHitAction -= OnPlayerHit;
     }
 
+
     public void OnPlayerHit()
     {
         string templateId = GameConstants.GetEnemyStringBasedOnType(enemyType);
         PlayerService.DecreaseStat(statToModifiy, Config.enemyConfig.enemies[templateId].damage);
-        Destroy(gameObject);
+        if (!dontDestroy) { Destroy(gameObject); }
     }
 }

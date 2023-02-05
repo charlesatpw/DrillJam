@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620669364499482143}
   - component: {fileID: 8738658089339945291}
+  - component: {fileID: 7353009026796455886}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7353009026796455886
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673139720007194035}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7854804011106980963
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +117,7 @@ GameObject:
   - component: {fileID: 2913723203380612865}
   - component: {fileID: 7941188207073750084}
   - component: {fileID: 8203986504065288025}
+  - component: {fileID: 8643045775508050655}
   m_Layer: 0
   m_Name: AntPrefab
   m_TagString: Untagged
@@ -163,3 +185,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.21599102, y: 3.87}
   m_Size: {x: 3.4188156, y: 7.844391}
   m_Direction: 0
+--- !u!95 &8643045775508050655
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854804011106980963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c90860f1c7cfb0438656423e48f254a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
