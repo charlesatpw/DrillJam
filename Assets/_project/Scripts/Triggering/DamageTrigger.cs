@@ -25,5 +25,6 @@ public class DamageTrigger : AbstractTriggerable
         string templateId = GameConstants.GetEnemyStringBasedOnType(enemyType);
         PlayerService.DecreaseStat(statToModifiy, Config.enemyConfig.enemies[templateId].damage);
         if (!dontDestroy) { Destroy(gameObject); }
+        SoundManager.instance.PlayClip(SoundManager.SoundClip.EnemyHit);
     }
 }
