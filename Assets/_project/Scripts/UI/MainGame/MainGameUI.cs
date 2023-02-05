@@ -31,8 +31,8 @@ public class MainGameUI : MonoBehaviour
     {
         SoundManager.instance.PlayTrack(SoundManager.SoundClip.GameMusic);
 
-        currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore.ToString());
-        highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore.ToString());
+        currentMDug.SetAmount(LocalPlayerData.instance.localData.currentMScore, "m", string.Empty);
+        highscoreMDug.SetAmount(LocalPlayerData.instance.localData.highestMScore, "m", "Highscore: ");
 
         int playerMaxFuel = Config.playerConfig.maxFuel;
         fuelSliderDisplay.Init(null, 0, playerMaxFuel);
