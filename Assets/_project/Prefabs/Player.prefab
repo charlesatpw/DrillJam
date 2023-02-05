@@ -57,6 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 2984724822603928836}
   playerTriggerManager: {fileID: 1950543535}
+  playerEnabled: 1
 --- !u!114 &2984724822603928838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2984724822603928843}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5169,6 +5170,14 @@ PrefabInstance:
     - target: {fileID: 4287723585782688798, guid: 4b17efc0d7ef29646b2ba97246537767, type: 3}
       propertyPath: m_Name
       value: drillEngineBlockTotal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103502884958676880, guid: 4b17efc0d7ef29646b2ba97246537767, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715204052888864829, guid: 4b17efc0d7ef29646b2ba97246537767, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b17efc0d7ef29646b2ba97246537767, type: 3}
