@@ -20,6 +20,9 @@ public class ItemPlacement : MonoBehaviour
     public GameObject rock;
 
     [SerializeField]
+    public GameObject barrel;
+
+    [SerializeField]
     public BoxCollider2D levelBoundingBox;
 
     public float minY;
@@ -116,6 +119,13 @@ public class ItemPlacement : MonoBehaviour
         else if (randomValue < Config.itemConfig.items[GameConstants.Rock].weight + Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
             return rock;
+        }
+        else if (randomValue < Config.itemConfig.items[GameConstants.Rock].weight + 
+            Config.itemConfig.items[GameConstants.Jerry_Can].weight + 
+            Config.itemConfig.items[GameConstants.Fertilizer].weight +
+            Config.itemConfig.items[GameConstants.RadiationBarrel].weight)
+        {
+            return barrel;
         }
         else
         {

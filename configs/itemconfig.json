@@ -26,6 +26,12 @@
       "minSpawnDepth" : 50,
       "statEffect" : 20,
       "damaging" : true
-  }
+    },
+    "RadiationBarrel" : {
+      "weight" : 0.25,
+      "minSpawnDepth" : 50,
+      "statEffect" : 10,
+      "damaging" : true
+    }
   }
 }

@@ -203,6 +203,7 @@ MonoBehaviour:
   fert: {fileID: 558032813061359902, guid: 4cb30752d975bfe45b95a83df37ff414, type: 3}
   fuel: {fileID: 8276959280139505734, guid: 0f871c39484a9a247b972e72b67376bd, type: 3}
   rock: {fileID: 7299240491493150198, guid: 6d4a5d28641fce44c9129032e3a3ab2b, type: 3}
+  barrel: {fileID: 0}
   levelBoundingBox: {fileID: 1854558239}
   minY: 0
   maxYAddition: 50

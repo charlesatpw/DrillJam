@@ -3,7 +3,8 @@ public enum Items
     Item_Fertilizer,
     Item_Jerry_Can,
     Item_Water_Pocket,
-    Item_Rock
+    Item_Rock,
+    Item_Radiation_Barrel
 }
 
 public class GameConstants
@@ -25,6 +26,7 @@ public class GameConstants
     public const string Jerry_Can = "Jerry_Can";
     public const string Water_Pocket = "Water_Pocket";
     public const string Rock = "Rock";
+    public const string RadiationBarrel = "RadiationBarrel";
 
     public static string GetItemStringBasedOnType(Items item)
     {
@@ -42,6 +44,9 @@ public class GameConstants
                 break;
             case Items.Item_Rock:
                 returnString = Rock;
+                break;
+            case Items.Item_Radiation_Barrel:
+                returnString = RadiationBarrel;
                 break;
         }
 
