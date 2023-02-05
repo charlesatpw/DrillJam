@@ -67,9 +67,17 @@ public class ItemPlacement : MonoBehaviour
     private void SpawnItem(Vector3 location)
     {
         // Pick time
-        GameObject itemToSpawn = SelectItem();
+        GameObject itemToSpawn = SelectItem(out Items type);
+
+        Quaternion rotQuart = new Quaternion(0, 0, 0, 0);
+
+        if (type.Equals(Items.Item_Jerry_Can) || type.Equals(Items.Item_Radiation_Barrel) || type.Equals(Items.Item_Fertilizer))
+        {
+            rotQuart = Quaternion.AngleAxis(Random.Range(-45.0f, 45.0f), Vector3.forward);
+        }
+
         // Pick location
-        Instantiate(itemToSpawn, location, new Quaternion(0, 0, 0, 0), transform);
+        Instantiate(itemToSpawn, location, rotQuart, transform);
     }
 
     private Vector3 SelectLocation(List<Vector3> spawnLocations, float minDistanceRadius, int maxTries, int currentTry)
@@ -101,23 +109,27 @@ public class ItemPlacement : MonoBehaviour
         return false;
     }
 
-    private GameObject SelectItem()
+    private GameObject SelectItem(out Items itemType)
     {
         List<ItemTemplate> items = new List<ItemTemplate>(Config.itemConfig.items.Values);
         float totalWeight = ItemService.GetTotalItemWeight();
+        itemType = Items.Item_Water_Pocket;
 
         float randomValue = Random.Range(0f, totalWeight);
 
         if (randomValue < Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
+            itemType = Items.Item_Fertilizer;
             return fert;
         }
         else if (randomValue < Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
+            itemType = Items.Item_Jerry_Can;
             return fuel;
         }
         else if (randomValue < Config.itemConfig.items[GameConstants.Rock].weight + Config.itemConfig.items[GameConstants.Jerry_Can].weight + Config.itemConfig.items[GameConstants.Fertilizer].weight)
         {
+            itemType = Items.Item_Rock;
             return rock;
         }
         else if (randomValue < Config.itemConfig.items[GameConstants.Rock].weight + 
@@ -125,6 +137,7 @@ public class ItemPlacement : MonoBehaviour
             Config.itemConfig.items[GameConstants.Fertilizer].weight +
             Config.itemConfig.items[GameConstants.RadiationBarrel].weight)
         {
+            itemType = Items.Item_Radiation_Barrel;
             return barrel;
         }
         else
