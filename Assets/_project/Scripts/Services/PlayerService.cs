@@ -24,11 +24,11 @@ public class PlayerService
         {
             case PlayerStats.Health:
                 LocalPlayerData.instance.localData.health += amount;
-                Mathf.Clamp(LocalPlayerData.instance.localData.health, 0, Config.playerConfig.maxHealth);
+                LocalPlayerData.instance.localData.health = Mathf.Clamp(LocalPlayerData.instance.localData.health, 0, Config.playerConfig.maxHealth);
                 break;
             case PlayerStats.Fuel:
                 LocalPlayerData.instance.localData.fuel += amount;
-                Mathf.Clamp(LocalPlayerData.instance.localData.fuel, 0, Config.playerConfig.maxFuel);
+                LocalPlayerData.instance.localData.fuel = Mathf.Clamp(LocalPlayerData.instance.localData.fuel, 0, Config.playerConfig.maxFuel);
                 break;
             case PlayerStats.MetersDug:
                 LocalPlayerData.instance.localData.currentMScore += amount;
