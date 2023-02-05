@@ -108,6 +108,8 @@ public class SoundManager : MonoBehaviour
         if (sounds.TryGetValue(soundClip, out AudioClip clipToPlay) && sfxSource)
         {
             sfxSource.clip = clipToPlay;
+
+            sfxSource.pitch = 1 + Random.Range(-0.05f, 0.05f);
             sfxSource.Play();
         }
     }
