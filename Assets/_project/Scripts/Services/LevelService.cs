@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public enum LayerLevel
@@ -23,5 +24,10 @@ public class LevelService
         }
 
         return (LayerLevel)currentLevel;
+    }
+
+    public static float GetMetersFromTop(Transform topObject, float y)
+    {
+        return Mathf.Abs(y + Mathf.Abs(topObject.position.y));
     }
 }
