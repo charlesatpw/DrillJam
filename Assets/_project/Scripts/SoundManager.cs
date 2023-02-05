@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
         BeatPBNoise,
         WinJingle,
         EnemyHit,
-        NextLayerSound
+        ItemPickup_RadioactiveBarrel
     }
 
     public enum VoiceLines

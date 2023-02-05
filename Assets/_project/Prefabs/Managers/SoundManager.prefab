@@ -52,8 +52,19 @@ MonoBehaviour:
   musicSource: {fileID: 3726379467333778764}
   voiceLineSource: {fileID: 3726379467333778763}
   soundClips:
+  - {fileID: 8300000, guid: ea989e7118068864cbf0090cc7e12691, type: 3}
+  - {fileID: 8300000, guid: e28caf04fc8df1947b39d9d81f58ad77, type: 3}
+  - {fileID: 8300000, guid: 51fe5a5deb9ec42468f654a3fa82c3f6, type: 3}
+  - {fileID: 8300000, guid: 175210937c6e9f048b87206f46be6574, type: 3}
+  - {fileID: 8300000, guid: cf033615773cbbe4c8667e11a1dcb7dd, type: 3}
+  - {fileID: 8300000, guid: 175210937c6e9f048b87206f46be6574, type: 3}
+  - {fileID: 8300000, guid: a09d10f01b82b3c4b972a0875c6685aa, type: 3}
+  - {fileID: 8300000, guid: c0ad52f8d90feb142a1e84af253a361a, type: 3}
+  - {fileID: 8300000, guid: 694e89bad290d444980f17f922666149, type: 3}
+  - {fileID: 8300000, guid: 75e10d08f99568d4f89de8354d76fac8, type: 3}
   - {fileID: 0}
-  - {fileID: 8300000, guid: 05d8c169bfe94224dbfe5155fb5c4dfe, type: 3}
+  - {fileID: 8300000, guid: fe9d8d2683249324a82cb002791e7057, type: 3}
+  - {fileID: 8300000, guid: a771748587483f7459b2af29c8b7c868, type: 3}
 --- !u!82 &3726379467333778765
 AudioSource:
   m_ObjectHideFlags: 0
