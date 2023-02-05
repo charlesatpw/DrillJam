@@ -43,6 +43,7 @@ public class ItemPlacement : MonoBehaviour
     {
         minX = levelBoundingBox.bounds.min.x + 3f;
         maxX = levelBoundingBox.bounds.max.x - 3f;
+        minY = playerTransform.position.y - 30f;
     }
 
     private void Update()
